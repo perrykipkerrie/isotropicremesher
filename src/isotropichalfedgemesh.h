@@ -70,8 +70,7 @@ public:
         Halfedge *_allocLink = nullptr;
     };
     
-    IsotropicHalfedgeMesh(const std::vector<Vector3> &vertices,
-        const std::vector<std::vector<size_t>> &faces);
+    IsotropicHalfedgeMesh(const std::vector<Vector3> &vertices, const std::vector<std::vector<size_t>> &faces, const std::vector<bool> &featuredVertices = std::vector<bool>());
     ~IsotropicHalfedgeMesh();
     
     double averageEdgeLength();
