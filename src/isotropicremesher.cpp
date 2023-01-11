@@ -237,11 +237,7 @@ void IsotropicRemesher::shiftVertices() {
 	m_halfedgeMesh->updateTriangleNormals();
 	m_halfedgeMesh->updateVertexNormals();
 
-	for (IsotropicHalfedgeMesh::Vertex* vertex = m_halfedgeMesh->moveToNextVertex(nullptr);
-		 nullptr != vertex;
-		 vertex = m_halfedgeMesh->moveToNextVertex(vertex)) {
-		if (vertex->featured)
-			continue;
+	for (IsotropicHalfedgeMesh::Vertex* vertex = m_halfedgeMesh->moveToNextVertex(nullptr); nullptr != vertex; vertex = m_halfedgeMesh->moveToNextVertex(vertex)) {
 		m_halfedgeMesh->relaxVertex(vertex);
 	}
 }
